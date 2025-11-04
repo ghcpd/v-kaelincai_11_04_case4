@@ -1,0 +1,29 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.9, pytest-8.2.1, pluggy-1.6.0
+rootdir: C:\chatWorkspace\Project_B_Buggy
+collected 3 items
+
+test_buggy.py .F
+
+================================== FAILURES ===================================
+___________________ test_invalid_email_formats_raise_error ____________________
+
+store = <registration_buggy.InMemoryUserStore object at 0x0000018923DADD10>
+
+    def test_invalid_email_formats_raise_error(store: InMemoryUserStore) -> None:
+        service = UserRegistrationService(store=store)
+        invalid_emails = [
+            "user@@mail",
+            "test@.com",
+            "user@localhost",
+            "user@example..com",
+        ]
+        for email in invalid_emails:
+>           with pytest.raises(ValidationError):
+E           Failed: DID NOT RAISE <class 'registration_buggy.ValidationError'>
+
+test_buggy.py:44: Failed
+=========================== short test summary info ===========================
+FAILED test_buggy.py::test_invalid_email_formats_raise_error - Failed: DID NO...
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!
+========================= 1 failed, 1 passed in 0.10s =========================
