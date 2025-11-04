@@ -1,0 +1,160 @@
+CCJJLL630: Role
+You are a software engineer responsible for implementing and testing the capabilities of AI models on the Regression subtype within the Bug-related category.
+Your task is to provide two separate, complete Python projects:
+Project A – Pre-Regression (Stable Implementation)
+A project that contains the original, stable, and fully functional implementation of a user registration system. This version correctly validates user input, including email format, password requirements, and duplicate user checks.
+Project B – Post-Regression (Buggy Implementation)
+A project that contains a modified version of the same system after new feature updates (e.g., third-party login integration or enhanced password rules). This version introduces a regression bug — the email format validation logic has been broken, allowing invalid emails like "user@@mail" or "test@.com" to be accepted during registration.
+Each project must include its own code, environment setup, test cases, and execution scripts.
+You must ensure that all files are generated, stored locally, and fully reproducible.
+Both projects should handle edge cases, performance considerations, and correctness verification while enabling measurable comparison of system reliability before and after regression.
+________________________________________
+Title
+Evaluation of GPT-5-Codex, GPT-5, Claude Sonnet 4.5, S100, and S40 on Bug-related – Regression Detection, Diagnosis, and Correction
+________________________________________
+Description
+This experiment evaluates AI models’ ability to detect, reproduce, and diagnose regression bugs caused by unintended code changes.
+The focus is on correctness, consistency, and regression identification between functional and broken versions of the same feature.
+Key Evaluation Criteria
+•	Correctness of pre- and post-regression implementations
+•	Detection of behavioral differences and broken functionality
+•	Handling of malformed inputs, hidden vulnerabilities, and edge-case validation
+•	Comprehensive automated test coverage for normal, edge, and invalid cases
+•	Fully reproducible setup and one-click test execution
+•	Quantitative comparison of test success rate, input coverage, and regression detection accuracy
+________________________________________
+Requirements for the AI Model Output
+1. Test Scenario & Description
+Clearly describe the regression scenario being tested.
+Specify:
+•	The original working logic (e.g., email validation using regex)
+•	The broken behavior introduced in the new version
+•	Expected input and output formats (preferably JSON or Python dict)
+•	The intended verification goal: detect and confirm regression
+________________________________________
+2. Project A – Pre-Regression (Stable Implementation)
+Generate a complete project folder named Project_A_Stable containing:
+•	registration_stable.py – Correct implementation with proper email validation, password checks, and duplicate user prevention.
+•	requirements_original.txt – Environment setup file.
+•	setup_original.sh – Script to initialize dependencies.
+•	test_original.py – Automated tests verifying proper validation and expected behavior.
+•	run_original.sh – Script to run all tests and store logs.
+•	log_original.txt – Log of test outputs and validation results.
+•	time_original.txt – Optional performance metrics for baseline comparison.
+________________________________________
+3. Project B – Post-Regression (Buggy Implementation)
+Generate a complete project folder named Project_B_Buggy containing:
+•	registration_buggy.py – Modified version introducing a regression bug (broken email validation logic).
+•	requirements_buggy.txt – Environment setup file.
+•	setup_buggy.sh – Script for initializing environment.
+•	test_buggy.py – Automated tests detecting the regression (tests that fail for invalid emails).
+•	run_buggy.sh – Script to execute all tests and save outputs.
+•	log_buggy.txt – Log showing failed validations and incorrect registrations.
+•	time_buggy.txt – Performance report for the buggy version.
+________________________________________
+4. Test Data Generation
+Generate at least five structured test cases saved in test_data.json, covering:
+•	Normal cases – Valid email, strong password, new user registration.
+•	Boundary cases – Maximum password length, borderline valid email.
+•	Invalid or malformed inputs – Missing “@”, double “@@”, domain-less email.
+•	Regression checks – Inputs previously validated correctly but now incorrectly accepted.
+Each test must define:
+•	Input payload (JSON)
+•	Expected output (e.g., "Registration successful" or "Invalid email format")
+•	Expected status (pass or fail)
+•	Regression indicator (true or false)
+________________________________________
+5. Comparison and Reporting
+After both projects have been executed, generate a summary report named compare_report.md containing:
+•	Side-by-side comparison of test results (before vs. after regression)
+•	Table of pass/fail rates, accuracy, and regression detection results
+•	Description of behavior differences caused by the introduced bug
+•	Observations on validation robustness and regression scope
+________________________________________
+6. Reproducible Environment
+Both projects must include:
+•	Independent environment setup (requirements.txt, setup.sh, or Dockerfile)
+•	Instructions for setting up and running in a clean environment
+•	Optional note on isolated virtual environments or container usage
+________________________________________
+7. Execution Scripts
+Each project must include a one-click execution script (run_original.sh and run_buggy.sh) that:
+•	Sets up the environment
+•	Runs all test cases automatically
+•	Saves logs and results
+A master script (run_all.sh) must be generated at the root level to:
+•	Execute both projects sequentially
+•	Aggregate all results
+•	Generate the final compare_report.md
+________________________________________
+8. Expected Output
+The model must output all required files for both Project A and Project B, including:
+•	Implementation code
+•	Test cases
+•	Logs and metrics
+•	Setup and execution scripts
+•	Comparison report
+________________________________________
+9. Documentation
+Generate a README.md file at the root level explaining:
+•	The purpose of each project
+•	The regression bug being tested and how it manifests
+•	Instructions for executing each project and comparing results
+•	Environment setup details for reproducibility
+•	Limitations (e.g., simulated database, local validation only)
+________________________________________
+Deliverables (All must be saved as local files)
+Project A – Pre-Regression (Stable Implementation)
+•	registration_stable.py
+•	requirements_original.txt
+•	setup_original.sh
+•	test_original.py
+•	run_original.sh
+•	log_original.txt
+•	time_original.txt
+Project B – Post-Regression (Buggy Implementation)
+•	registration_buggy.py
+•	requirements_buggy.txt
+•	setup_buggy.sh
+•	test_buggy.py
+•	run_buggy.sh
+•	log_buggy.txt
+•	time_buggy.txt
+Shared Deliverables
+•	test_data.json
+•	compare_report.md
+•	run_all.sh
+•	README.md
+
+
+GitHub Copilot: Setting up TODO plan for creating both project structures and files.
+
+Created 7 todos
+
+Starting stable project file creation.
+
+Starting: *Create stable project files* (1/7)
+
+Creating stable project directory and files now.
+
+Created [](file:///c%3A/chatWorkspace/Project_A_Stable)
+
+Created [](file:///c%3A/chatWorkspace/Project_A_Stable/requirements_original.txt)
+
+Created [](file:///c%3A/chatWorkspace/Project_A_Stable/setup_original.sh)
+
+Created [](file:///c%3A/chatWorkspace/Project_A_Stable/registration_stable.py)
+
+Created [](file:///c%3A/chatWorkspace/Project_A_Stable/test_original.py)
+
+Created [](file:///c%3A/chatWorkspace/Project_A_Stable/run_original.sh)
+
+Created [](file:///c%3A/chatWorkspace/Project_A_Stable/log_original.txt)
+
+Created [](file:///c%3A/chatWorkspace/Project_A_Stable/time_original.txt)
+
+Completed: *Create stable project files* (1/7)
+
+Stable project files done. Moving to buggy project creation.
+
+Made changes.
