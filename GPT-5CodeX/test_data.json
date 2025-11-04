@@ -1,0 +1,68 @@
+[
+  {
+    "name": "valid_new_user",
+    "input": {
+      "email": "new.user@example.com",
+      "password": "Str0ngPass!234",
+      "display_name": "New User"
+    },
+    "expected_output": "Registration successful",
+    "expected_status": "pass",
+    "regression_indicator": false
+  },
+  {
+    "name": "boundary_email",
+    "input": {
+      "email": "qa.tester+boundary@example.co.uk",
+      "password": "ComplexPass#789",
+      "display_name": "Boundary Tester"
+    },
+    "expected_output": "Registration successful",
+    "expected_status": "pass",
+    "regression_indicator": false
+  },
+  {
+    "name": "max_length_password",
+    "input": {
+      "email": "max.length@example.org",
+      "password": "ABBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB1!",
+      "display_name": "Max PW"
+    },
+    "expected_output": "Registration successful",
+    "expected_status": "pass",
+    "regression_indicator": false
+  },
+  {
+    "name": "double_at_email",
+    "input": {
+      "email": "user@@mail.com",
+      "password": "ValidPass123!",
+      "display_name": "QA Analyst"
+    },
+    "expected_output": "Invalid email format",
+    "expected_status": "fail",
+    "regression_indicator": true
+  },
+  {
+    "name": "domainless_email",
+    "input": {
+      "email": "test@.com",
+      "password": "ValidPass123!",
+      "display_name": "Edge User"
+    },
+    "expected_output": "Invalid email format",
+    "expected_status": "fail",
+    "regression_indicator": true
+  },
+  {
+    "name": "missing_symbol",
+    "input": {
+      "email": "symbol.missing@example.com",
+      "password": "NoSymbol1234",
+      "display_name": "No Symbol"
+    },
+    "expected_output": "Password must include a symbol",
+    "expected_status": "fail",
+    "regression_indicator": false
+  }
+]
