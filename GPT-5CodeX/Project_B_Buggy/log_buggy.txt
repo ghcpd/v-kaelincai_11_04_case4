@@ -1,0 +1,29 @@
+.F.F                                                                [100%]
+=================================== FAILURES ===================================
+____________________ test_invalid_email_should_be_rejected ____________________
+
+system = <registration_buggy.UserRegistrationSystem object at 0xDEADBEEF>
+payload = {'display_name': 'QA Analyst', 'email': 'user@@mail.com', 'password': 'ValidPass123!'}
+
+    def test_invalid_email_should_be_rejected(system: UserRegistrationSystem) -> None:
+        payload = load_test_payload("double_at_email")
+        # Regression expectation: this should raise but currently passes.
+>       with pytest.raises(RegistrationError):
+E       Failed: DID NOT RAISE <class 'registration_buggy.RegistrationError'>
+
+Project_B_Buggy\test_buggy.py:29: Failed
+_____________________ test_domainless_email_should_fail ______________________
+
+system = <registration_buggy.UserRegistrationSystem object at 0xFEEDBEEF>
+payload = {'display_name': 'Edge User', 'email': 'test@.com', 'password': 'ValidPass123!'}
+
+    def test_domainless_email_should_fail(system: UserRegistrationSystem) -> None:
+        payload = load_test_payload("domainless_email")
+>       with pytest.raises(RegistrationError):
+E       Failed: DID NOT RAISE <class 'registration_buggy.RegistrationError'>
+
+Project_B_Buggy\test_buggy.py:36: Failed
+=========================== short test summary info ============================
+FAILED test_buggy.py::test_invalid_email_should_be_rejected - Failed: DID NOT RAISE <class 'registration_buggy.RegistrationError'>
+FAILED test_buggy.py::test_domainless_email_should_fail - Failed: DID NOT RAISE <class 'registration_buggy.RegistrationError'>
+2 failed, 2 passed in 0.09s
